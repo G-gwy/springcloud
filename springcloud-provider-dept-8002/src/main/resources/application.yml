@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 
 mybatis:
@@ -25,7 +25,7 @@ eureka:
     service-url:
       defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
   instance:
-    instance-id: springcloud-provider:8001  #修改默认描述信息
+    instance-id: springcloud-provider:8002  #修改默认描述信息
 
 info:
   app-name: gggsl

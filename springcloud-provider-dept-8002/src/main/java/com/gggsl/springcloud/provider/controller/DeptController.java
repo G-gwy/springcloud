@@ -30,12 +30,15 @@ public class DeptController {
     }
 
     @GetMapping("/get/{id}")
-    public Dept get( @PathVariable("id") Long id) {
+    public Dept get(@PathVariable("id") Long id ) {
+        return deptService.get(id);
+    }
+    /*@GetMapping("/get/{id}")
+    public Dept get(@PathVariable("id") Long id) {
 
         return deptService.get(id);
     }
-
-
+*/
 
     //注册进来的微服务，获取一些信息
     @GetMapping("/discovery")

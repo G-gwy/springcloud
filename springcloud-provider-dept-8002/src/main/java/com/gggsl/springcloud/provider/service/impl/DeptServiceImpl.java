@@ -18,12 +18,12 @@ public class DeptServiceImpl implements DeptService {
     }
 
     @Override
-    public List<Dept> listDept() {
-        return deptDao.selectAll();
+    public Dept get(Long id) {
+        return deptDao.selectOne(new Dept().setDeptNo(id));
     }
 
     @Override
-    public Dept get(Long id) {
-        return deptDao.selectOne(new Dept().setDeptNo(id));
+    public List<Dept> listDept() {
+        return deptDao.selectAll();
     }
 }
