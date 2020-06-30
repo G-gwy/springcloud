@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 public class DeptController {
-    //理解：消费者不应该有service，水水水水水水水水水水水水
+    //理解：消费者不应该有service
     @Autowired
     RestTemplate restTemplate;
     //ribbon时，这是个变量（通过服务访问--ribbon）
