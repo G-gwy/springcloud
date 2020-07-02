@@ -3,6 +3,7 @@ package com.springcloud.consumer.controller;
 import com.gggsl.springcloud.api.entity.Dept;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +21,10 @@ public class DeptController {
     @GetMapping("/consumer/dept/list")
     public List<Dept> list() {
         return restTemplate.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
+    }
+    @GetMapping("/consumer/dept/get/{id}")
+    public Dept get(@PathVariable("id") Long id) {
+        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/get/{id}", Dept.class,id);
     }
 
 }

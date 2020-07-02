@@ -1,5 +1,5 @@
 server:
-  port: 8003
+  port: 8001
 
 
 mybatis:
@@ -11,7 +11,7 @@ mybatis:
 
 spring:
   application:
-    name: springcloud-provider-dept-02
+    name: springcloud-provider-dept
   datasource:
     url: jdbc:mysql://localhost:3306/db01?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&allowPublicKeyRetrieval=true
     type: com.alibaba.druid.pool.DruidDataSource
@@ -25,8 +25,8 @@ eureka:
     service-url:
       defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
   instance:
-    instance-id: springcloud-provider:8001  #修改默认描述信息
-    prefer-ip-address: false
+    instance-id: springcloud-provider-dept-hystrix:8001  #修改默认描述信息
+    prefer-ip-address: true
 
 info:
   app-name: gggsl

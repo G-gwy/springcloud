@@ -1,0 +1,24 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: spring-cloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zuul9527.com
+    prefer-ip-adress: true
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept
+    mydept.path: /mydept/**
+  ignored-services: "*"
+  prefix: /gggsl #发布 设置公共前缀
+
+info:
+  app.name: gggsl-springcloud-zuul
+  company.name: gggsl.com

@@ -14,7 +14,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-            <version>1.4.7.RELEASE</version>
+            <version>1.4.6.RELEASE</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -26,7 +26,7 @@
             <!--ribbon-->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-ribbon</artifactId>
-            <version>1.4.7.RELEASE</version>
+            <version>1.4.6.RELEASE</version>
         </dependency>
         <!--需要拿到实体类，所以要配置api module-->
         <dependency>

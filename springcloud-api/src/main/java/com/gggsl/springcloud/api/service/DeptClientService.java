@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT")
+@FeignClient(value = "SPRINGCLOUD-PROVIDER-DEPT-02", fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
-    @GetMapping("/dept/list")
+    @GetMapping("/provider/dept/list")
     List<Dept> list();
-    @GetMapping("/dept/get/{id}")
+
+    @GetMapping("/provider/dept/get/{id}")
     Dept get(@PathVariable("id") Long id);
 
 }

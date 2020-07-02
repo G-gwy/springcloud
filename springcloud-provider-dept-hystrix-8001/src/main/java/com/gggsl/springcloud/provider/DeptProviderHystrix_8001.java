@@ -11,10 +11,20 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableEurekaClient //在服务启动后自动注册到eureka中
+@EnableDiscoveryClient
 @EnableCircuitBreaker //添加对熔断的支持
-public class DeptProvider_8001 {
+public class DeptProviderHystrix_8001 {
     public static void main(String[] args) {
-        SpringApplication.run(DeptProvider_8001.class, args);
+        SpringApplication.run(DeptProviderHystrix_8001.class, args);
     }
 
+    @Bean
+    public ServletRegistrationBean servletRegistrationBean() {
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean(new HystrixMetricsStreamServlet());
+        registrationBean.addUrlMappings("/actuator/hystrix.stream");
+        //registrationBean.setLoadOnStartup(1);
+        //registrationBean.addUrlMappings("/hystrix.stream");
+        registrationBean.setName("HystrixMetricsStreamServlet");
+        return registrationBean;
+    }
 }
