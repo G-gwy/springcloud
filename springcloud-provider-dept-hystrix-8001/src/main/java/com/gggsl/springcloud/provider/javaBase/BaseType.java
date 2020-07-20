@@ -27,6 +27,7 @@ public class BaseType {
             list1.add("222");
             aa.set(2);
         });
+        //dev -gggsl
         list.forEach(System.out::println);
         
     }
