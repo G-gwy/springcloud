@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/trans/pom.xml" />
         <option value="$PROJECT_DIR$/tans-pri/pom.xml" />
+        <option value="$PROJECT_DIR$/trans-api/pom.xml" />
       </list>
     </option>
   </component>

@@ -1,0 +1,70 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: seata-trans
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      filters: stat
+      initialSize: 1
+      logAbandoned: true
+      maxActive: 20
+      maxOpenPreparedStatements: 20
+      maxWait: 60000
+      minEvictableIdleTimeMillis: 300000
+      minIdle: 1
+      poolPreparedStatements: true
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      timeBetweenEvictionRunsMillis: 60000
+      validationQuery: SELECT 'x'
+    password: qwer1234
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&allowMultiQueries=true
+    username: root
+
+
+registry:
+  address: nacos://localhost:8848
+  username: nacos
+  password: nacos
+  group: SEATA_GROUP
+  space: 51547758-68b1-46ac-bea2-8592e647d5f1
+
+dubbo:
+  port: 20881
+  loadbalance: random
+  timeout: 5000
+
+seata:
+  enabled: true
+  enable-auto-data-source-proxy: true
+  tx-service-group: my_test_tx_group
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+      namespace: 51547758-68b1-46ac-bea2-8592e647d5f1
+  service:
+    vgroup-mapping:
+      my_test_tx_group: default
+    disable-global-transaction: false
+  client:
+    rm:
+      report-success-enable: false
+

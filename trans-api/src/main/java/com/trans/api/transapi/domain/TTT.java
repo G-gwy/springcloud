@@ -1,4 +1,4 @@
-package com.dubbo.trans.tanspri.domain;
+package com.trans.api.transapi.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
