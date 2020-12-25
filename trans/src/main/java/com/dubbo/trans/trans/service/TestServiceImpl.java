@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Service(version = "1.0.0", group = "SEATA_GROUP")
+@Service(version = "1.0.0", group = "${registry.group}")
 public class TestServiceImpl implements TestService {
     @Resource
     TTTService tttService;

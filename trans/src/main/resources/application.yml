@@ -33,8 +33,7 @@ registry:
   address: nacos://localhost:8848
   username: nacos
   password: nacos
-  group: SEATA_GROUP
-  space: 51547758-68b1-46ac-bea2-8592e647d5f1
+  group: seata-test
 
 dubbo:
   port: 20882
@@ -52,7 +51,6 @@ seata:
       server-addr: 127.0.0.1:8848
       username: nacos
       password: nacos
-      namespace: 51547758-68b1-46ac-bea2-8592e647d5f1
   config:
     type: nacos
     nacos:

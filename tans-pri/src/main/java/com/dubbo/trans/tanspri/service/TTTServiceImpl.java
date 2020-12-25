@@ -8,7 +8,7 @@ import io.seata.spring.annotation.GlobalTransactional;
 
 import javax.annotation.Resource;
 
-@Service(version = "1.0.0", group = "SEATA_GROUP")
+@Service(version = "1.0.0", group = "${registry.group}")
 public class TTTServiceImpl implements TTTService {
     @Resource
     TTTDao tttDao;
