@@ -1,6 +1,7 @@
 package com.dubbo.trans.trans;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
+import io.seata.spring.annotation.datasource.EnableAutoDataSourceProxy;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +19,7 @@ import java.util.concurrent.CountDownLatch;
 //@NacosPropertySource(dataId = "wetland-application.properties", groupId = "1.0.0", first = true)
 @MapperScan("com.dubbo.trans.trans.dao")
 @ComponentScan(basePackages = { "com.dubbo.trans"})
-@EnableScheduling
+//@EnableAutoDataSourceProxy
 public class TransApplication {
 
     public static void main(String[] args) throws Exception {

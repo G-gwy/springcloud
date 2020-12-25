@@ -2,6 +2,7 @@ package com.dubbo.trans.tanspri;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
+import io.seata.spring.annotation.datasource.EnableAutoDataSourceProxy;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +20,7 @@ import java.util.concurrent.CountDownLatch;
 //@NacosPropertySource(dataId = "wetland-application.properties", groupId = "1.0.0", first = true)
 @MapperScan("com.dubbo.trans.tanspri.dao")
 @ComponentScan(basePackages = { "com.dubbo.trans"})
-@EnableScheduling
+//@EnableAutoDataSourceProxy
 public class TansPriApplication {
 
     public static void main(String[] args)throws InterruptedException {
